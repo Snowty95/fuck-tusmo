@@ -1,13 +1,16 @@
 const words = require('an-array-of-french-words');
 
-let start = "bau"
-let letters = [ ];
-let cant = [];
-let number = 6;
+let start = "lac"
+let letters = "se"
+let cant = "zrt"
+let number = 9;
 let atIndex = {
-    8: 'e'
+    7: 'e'
  }
 let noAtIndex = {
+    4: 's',
+    5: 's',
+    6: 'e'
 }
 
 words.filter(m => {
@@ -20,8 +23,7 @@ words.filter(m => {
             } else if(letters.includes(m[i])) {
                 nbLetterFound++
             }
-            if(atIndex[i] != null) {
-                console.log("i : " + atIndex[i]);
+            if(atIndex[i] != null && atIndex[i] !== m[i]) {
                 isGood = false;
             }
             if(noAtIndex[i] === m[i]) {
